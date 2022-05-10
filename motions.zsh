@@ -32,7 +32,7 @@ bindkey -M viopp v vi-forced-motion
 # More text objects from zsh/functions/Zle
 zle -N select-quoted
 zle -N select-bracketed
-for m in vicmd viopp; do
+for m in visual viopp; do
 	for seq in {a,i}{\',\",\`}; do
 		bindkey -M "$m" "$seq" select-quoted
 	done
@@ -73,7 +73,7 @@ done
 # Add select-(in|a)-command
 zle -N select-a-command  -select-a-command
 zle -N select-in-command -select-a-command
-for m in vicmd viopp; do
+for m in visual viopp; do
 	bindkey -M "$m" 'as' select-a-command 'aS' select-a-command \
 		'is' select-in-command 'iS' select-in-command
 done
